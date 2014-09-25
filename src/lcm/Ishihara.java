@@ -15,8 +15,8 @@ public class Ishihara {
         Ishihara ishihara = new Ishihara();
         Object[] answer = new Object[38];
 
-        answer[0] = 1;
-        answer[1] = 2;
+        answer[0] = 12;
+        answer[1] = 8;
         answer[2] = 3;
         answer[3] = 4;
         answer[4] = 5;
@@ -36,10 +36,10 @@ public class Ishihara {
         answer[18] = "";
         answer[19] = "";
         answer[20] = "";
-        answer[21] = 26;
-        answer[22] = 42;
-        answer[23] = 35;
-        answer[24] = 96;
+        answer[21] = 6;
+        answer[22] = 2;
+        answer[23] = 3;
+        answer[24] = 9;
         answer[25] = 2;
         answer[26] = 2;
         answer[27] = 0;
@@ -87,16 +87,20 @@ public class Ishihara {
     private Object[] answer;
 
     public String getResult() {
-        int wrong = getWrong();
-        System.out.println("JUMLAH SALAH : "+wrong);
+        reset();
+        int wrong = wrong();
+        int protan = protan();
+        int deutan = deutan();
+        int total = wrong - protan - deutan;
+
         String hasil = "According to this test you  ";
         if (wrong <= 4) {
             hasil = hasil + "are NOT COLOR BLIND (NORMAL)";
-        } else if (protan() && wrong <= 8) {
+        } else if (protan >= 3 && total <= 8) {
             hasil = hasil + "have some form of red color blindness (PROTAN).";
-        } else if (deutan() && wrong <= 8) {
+        } else if (deutan >= 3 && total <= 8) {
             hasil = hasil + "have some form of red color blindness (DEUTAN)";
-        } else if (wrong <= 8) {
+        } else if (total <= 8) {
             hasil = hasil + "have some form of red-green color blindness (PARSIAL COLOR BLIND).";
         } else {
             hasil = hasil + "TOTAL COLOR BLIND";
@@ -238,18 +242,19 @@ public class Ishihara {
         }
     }
 
-    public int getWrong() {
+    public int wrong() {
         reset();
         int x = 0;
         for (int i = 0; i < 38; i++) {
             if (!correct[i].toString().equals(answer[i] + "")) {
+                System.out.println(i + "||" + correct[i] + "||" + answer[i]);
                 x++;
             }
         }
         return x;
     }
 
-    public boolean protan() {
+    public int protan() {
         correct[21] = 2;
         correct[22] = 4;
         correct[23] = 3;
@@ -262,10 +267,10 @@ public class Ishihara {
             }
         }
 
-        return x >= 3;
+        return x;
     }
 
-    public boolean deutan() {
+    public int deutan() {
         correct[21] = 6;
         correct[22] = 2;
         correct[23] = 5;
@@ -278,6 +283,6 @@ public class Ishihara {
             }
         }
 
-        return x >= 3;
+        return x;
     }
 }

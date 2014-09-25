@@ -399,6 +399,8 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
             plate.setResult(false);
             listPlates.add(plate);
             
+            System.out.print(ishihara.getCorrect(plate) +" | ");
+            
             z = main.getLinearCongruen(z);
         }
 //

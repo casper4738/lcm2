@@ -69,7 +69,7 @@ public class TableModelResult extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return rowIndex+1;
+                return rowIndex+1+"|"+list.get(rowIndex).getPlate();
             case 1:
                 return list.get(list.get(rowIndex).getPlate()).getType().toUpperCase();
             case 2:

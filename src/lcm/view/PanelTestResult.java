@@ -56,6 +56,7 @@ public class PanelTestResult extends javax.swing.JPanel {
 
     public void set(List<Plate> lists) {
         try {
+            ishihara.reset();
             Object[] answer = new Object[38];
             for (Plate plate : lists) {
                 plate.setResult(ishihara.check(plate));
@@ -67,7 +68,9 @@ public class PanelTestResult extends javax.swing.JPanel {
             tableModel.setList(lists);
             table.setModel(tableModel);
             table.revalidate();
+
             ishihara.setAnswer(answer);
+            ishihara.reset();
             String strings = ishihara.getResult();
             labelResult.setText("<html>" + strings + "</html>".toUpperCase());
         } catch (Exception ex) {
@@ -86,19 +89,23 @@ public class PanelTestResult extends javax.swing.JPanel {
                 }
             }
 
-            int wrong = ishihara.getWrong();
+            ishihara.reset();
+            int wrong = ishihara.wrong();
+            int protan = ishihara.protan();
+            int deutan = ishihara.deutan();
+            int total = wrong - protan - deutan;
 
             String hasil = "BERDASARKAN TES ";
             if (wrong <= 4) {
-                hasil = "ANDA MEMILIKI PENGLIHATAN NORMAL";
-            } else if (ishihara.protan()) {
-                hasil = "ANDA TERINDIKASI MENGALAMI ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
-            } else if (ishihara.deutan()) {
-                hasil = "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
-            } else if (wrong <= 8) {
-                hasil = "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
+                hasil = hasil + "ANDA MEMILIKI PENGLIHATAN NORMAL";
+            } else if (protan >= 3 && total <= 8) {
+                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
+            } else if (deutan >= 3 && total <= 8) {
+                hasil = hasil + "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
+            } else if (total <= 8) {
+                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
             } else {
-                hasil = "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
+                hasil = hasil + "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
             }
 
             Properties properties = new Properties();
@@ -196,22 +203,25 @@ public class PanelTestResult extends javax.swing.JPanel {
                 }
             }
 
-            
-            int wrong = ishihara.getWrong();
+            ishihara.reset();
+            int wrong = ishihara.wrong();
+            int protan = ishihara.protan();
+            int deutan = ishihara.deutan();
+            int total = wrong - protan - deutan;
 
             String hasil = "BERDASARKAN TES ";
             if (wrong <= 4) {
-                hasil = "ANDA MEMILIKI PENGLIHATAN NORMAL";
-            } else if (ishihara.protan()) {
-                hasil = "ANDA TERINDIKASI MENGALAMI ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
-            } else if (ishihara.deutan()) {
-                hasil = "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
-            } else if (wrong <= 8) {
-                hasil = "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
+                hasil = hasil + "ANDA MEMILIKI PENGLIHATAN NORMAL";
+            } else if (protan >= 3 && total <= 8) {
+                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
+            } else if (deutan >= 3 && total <= 8) {
+                hasil = hasil + "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
+            } else if (total <= 8) {
+                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
             } else {
-                hasil = "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
+                hasil = hasil + "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
             }
-            
+
             JRBeanCollectionDataSource dt = new JRBeanCollectionDataSource(list);
             HashMap map = new HashMap();
             map.put("parameter1", hasil.toUpperCase());
