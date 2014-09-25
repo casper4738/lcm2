@@ -74,7 +74,6 @@ public class PanelTestResult extends javax.swing.JPanel {
         }
 
         try {
-            String string = ishihara.getResult();
             List<User> list = new ArrayList<>();
             list.add(FrameMain.USER);
 
@@ -87,14 +86,29 @@ public class PanelTestResult extends javax.swing.JPanel {
                 }
             }
 
+            int wrong = ishihara.getWrong();
+
+            String hasil = "BERDASARKAN TES ";
+            if (wrong <= 4) {
+                hasil = "ANDA MEMILIKI PENGLIHATAN NORMAL";
+            } else if (ishihara.protan()) {
+                hasil = "ANDA TERINDIKASI MENGALAMI ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
+            } else if (ishihara.deutan()) {
+                hasil = "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
+            } else if (wrong <= 8) {
+                hasil = "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
+            } else {
+                hasil = "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
+            }
+
             Properties properties = new Properties();
             properties.setProperty("ID", FrameMain.USER.getId());
             properties.setProperty("NAME", FrameMain.USER.getName());
             properties.setProperty("AGE", FrameMain.USER.getAge() + "");
-            properties.setProperty("JOBS", FrameMain.USER.getJobs()+ "");
+            properties.setProperty("JOBS", FrameMain.USER.getJobs() + "");
             properties.setProperty("ADDRESS", FrameMain.USER.getAddress());
             properties.setProperty("NUMBER_TEST", FrameMain.USER.getNumberTest() + "");
-            properties.setProperty("PARAMETER1", string.toUpperCase());
+            properties.setProperty("PARAMETER1", hasil.toUpperCase());
             properties.setProperty("PARAMETER2", par2 + "");
             properties.setProperty("PARAMETER3", (38 - par2) + "");
             properties.storeToXML(new FileOutputStream(new File("./result/" + FrameMain.USER.getId() + ".xml")), "LCM - ISHIHARA");
@@ -170,7 +184,6 @@ public class PanelTestResult extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            String string = ishihara.getResult();
             List<User> list = new ArrayList<>();
             list.add(FrameMain.USER);
 
@@ -183,9 +196,25 @@ public class PanelTestResult extends javax.swing.JPanel {
                 }
             }
 
+            
+            int wrong = ishihara.getWrong();
+
+            String hasil = "BERDASARKAN TES ";
+            if (wrong <= 4) {
+                hasil = "ANDA MEMILIKI PENGLIHATAN NORMAL";
+            } else if (ishihara.protan()) {
+                hasil = "ANDA TERINDIKASI MENGALAMI ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
+            } else if (ishihara.deutan()) {
+                hasil = "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
+            } else if (wrong <= 8) {
+                hasil = "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
+            } else {
+                hasil = "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
+            }
+            
             JRBeanCollectionDataSource dt = new JRBeanCollectionDataSource(list);
             HashMap map = new HashMap();
-            map.put("parameter1", string.toUpperCase());
+            map.put("parameter1", hasil.toUpperCase());
             map.put("parameter2", par2 + "");
             map.put("parameter3", (38 - par2) + "");
             UtilityPrint.printReport(dt, "report1", map);

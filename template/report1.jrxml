@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced14e9a-922f-48be-a7ca-975fc289b867">
 	<property name="ireport.zoom" value="1.24184264611831"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="115"/>
+	<property name="ireport.y" value="39"/>
 	<parameter name="parameter1" class="java.lang.String"/>
 	<parameter name="parameter2" class="java.lang.String"/>
 	<parameter name="parameter3" class="java.lang.String"/>
@@ -37,7 +37,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[THE CERTIFICATE OF CHECK UP RESULT]]></text>
+				<text><![CDATA[SURAT KETERANGAN HASIL PEMERIKSAAN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="e7aadbe6-4fed-4144-b1e0-5c2fa1ba76d6" x="14" y="36" width="485" height="25"/>
@@ -47,7 +47,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[DIAGNOSIS RESULT OF COLOR BLIND TEST ]]></text>
+				<text><![CDATA[TEST BUTA WARNA]]></text>
 			</staticText>
 			<image scaleImage="FillFrame">
 				<reportElement uuid="8794def7-8dc7-4d47-9ddf-036fd6ee967c" x="499" y="11" width="56" height="50"/>
@@ -67,7 +67,7 @@
 				<textFieldExpression><![CDATA[" : "+$F{jobs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="66" y="211" width="442" height="20"/>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="100" y="211" width="408" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[" : "+$P{parameter3}]]></textFieldExpression>
 			</textField>
@@ -82,14 +82,14 @@
 				<textFieldExpression><![CDATA[" : "+$F{id}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="191" width="66" height="20"/>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="191" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[CORRECT]]></text>
+				<text><![CDATA[JAWABAN BENAR :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="067e3e2a-38e5-4fd4-b622-c8106928fc46" x="0" y="142" width="542" height="20"/>
 				<textElement/>
-				<text><![CDATA[RESULT OF ISHIHARA TEST :]]></text>
+				<text><![CDATA[HASIL TES :]]></text>
 			</staticText>
 			<textField>
 				<reportElement uuid="c11dc96d-90b9-4d3f-93b6-548c3731ccb3" x="0" y="162" width="542" height="29"/>
@@ -97,7 +97,7 @@
 				<textFieldExpression><![CDATA[$P{parameter1}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="66" y="191" width="442" height="20"/>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="100" y="191" width="408" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[" : "+$P{parameter2}]]></textFieldExpression>
 			</textField>
@@ -114,12 +114,12 @@
 			<staticText>
 				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="52" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[AGE]]></text>
+				<text><![CDATA[UMUR]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="72" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[JOB]]></text>
+				<text><![CDATA[PEKERJAAN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="12" width="100" height="20"/>
@@ -127,19 +127,19 @@
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="211" width="66" height="20"/>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="211" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[WRONG]]></text>
+				<text><![CDATA[JAWABAN SALAH :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="32" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[NAME]]></text>
+				<text><![CDATA[NAMA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="92" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[ADDRESS]]></text>
+				<text><![CDATA[ALAMAT]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
