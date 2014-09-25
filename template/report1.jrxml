@@ -58,7 +58,7 @@
 	<columnHeader>
 		<band height="721">
 			<image scaleImage="FillFrame">
-				<reportElement uuid="2fc6ec41-2e46-4349-9bae-75f4e35d789c" x="42" y="142" width="513" height="579"/>
+				<reportElement uuid="2fc6ec41-2e46-4349-9bae-75f4e35d789c" x="165" y="191" width="390" height="530"/>
 				<imageExpression><![CDATA["02.jpg"]]></imageExpression>
 			</image>
 			<textField>

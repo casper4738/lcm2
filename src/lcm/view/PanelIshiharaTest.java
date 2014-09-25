@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import javax.swing.Timer;
+import lcm.Ishihara;
 import lcm.LCM;
 import lcm.Plate;
 import swingx.utility.FilterInput;
@@ -69,7 +70,7 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
             }
         });
 
-        timer.stop();
+//        timer.stop();
     }
 
     /**
@@ -389,6 +390,7 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
 
         int z = FrameMain.USER.getNumberTest();
         z = z % 38;
+        Ishihara ishihara = new Ishihara();
         for (int i = 0; i < 38; i++) {
             Plate plate = new Plate();
             plate.setPlate(z);
@@ -396,8 +398,6 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
             plate.setAnswer("");
             plate.setResult(false);
             listPlates.add(plate);
-            
-            System.out.println(i+"|"+z);
             
             z = main.getLinearCongruen(z);
         }

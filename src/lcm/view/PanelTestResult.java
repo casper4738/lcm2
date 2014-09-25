@@ -4,9 +4,12 @@
  */
 package lcm.view;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import javax.swing.JLabel;
 import lcm.Ishihara;
 import lcm.Plate;
@@ -51,23 +54,54 @@ public class PanelTestResult extends javax.swing.JPanel {
         table.setRowHeight(23);
     }
 
-    public void set(List<Plate> list) {
-        Object[] answer = new Object[38];
-        for (int i = 0; i < list.size(); i++) {
-            Plate plate = list.get(i);
-            plate.setResult(ishihara.check(plate));
-            plate.setCorrect(ishihara.getCorrect(plate));
-            plate.setWeak(ishihara.getWeak(plate));
-            answer[i] = plate.getAnswer();
-        }
-        
-        tableModel.setList(list);
-        table.setModel(tableModel);
-        table.revalidate();
-        ishihara.setAnswer(answer);
+    public void set(List<Plate> lists) {
+        try {
+            Object[] answer = new Object[38];
+            for (Plate plate : lists) {
+                plate.setResult(ishihara.check(plate));
+                plate.setCorrect(ishihara.getCorrect(plate));
+                plate.setWeak(ishihara.getWeak(plate));
+                answer[plate.getPlate()] = plate.getAnswer();
+            }
 
-        String string = ishihara.getResult();
-        labelResult.setText("<html>" + string + "</html>".toUpperCase());
+            tableModel.setList(lists);
+            table.setModel(tableModel);
+            table.revalidate();
+            ishihara.setAnswer(answer);
+            String strings = ishihara.getResult();
+            labelResult.setText("<html>" + strings + "</html>".toUpperCase());
+        } catch (Exception ex) {
+        }
+
+        try {
+            String string = ishihara.getResult();
+            List<User> list = new ArrayList<>();
+            list.add(FrameMain.USER);
+
+            int par2 = 0;
+            int par3 = 0;
+            for (int i = 0; i < tableModel.getRowCount(); i++) {
+                Plate p = tableModel.get(i);
+                if (p.isResult()) {
+                    par2++;
+                }
+            }
+
+            Properties properties = new Properties();
+            properties.setProperty("ID", FrameMain.USER.getId());
+            properties.setProperty("NAME", FrameMain.USER.getName());
+            properties.setProperty("AGE", FrameMain.USER.getAge() + "");
+            properties.setProperty("JOBS", FrameMain.USER.getJobs()+ "");
+            properties.setProperty("ADDRESS", FrameMain.USER.getAddress());
+            properties.setProperty("NUMBER_TEST", FrameMain.USER.getNumberTest() + "");
+            properties.setProperty("PARAMETER1", string.toUpperCase());
+            properties.setProperty("PARAMETER2", par2 + "");
+            properties.setProperty("PARAMETER3", (38 - par2) + "");
+            properties.storeToXML(new FileOutputStream(new File("./result/" + FrameMain.USER.getId() + ".xml")), "LCM - ISHIHARA");
+
+        } catch (Exception ex) {
+        }
+
     }
 
     /**
@@ -137,7 +171,6 @@ public class PanelTestResult extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             String string = ishihara.getResult();
-
             List<User> list = new ArrayList<>();
             list.add(FrameMain.USER);
 
@@ -153,7 +186,7 @@ public class PanelTestResult extends javax.swing.JPanel {
             JRBeanCollectionDataSource dt = new JRBeanCollectionDataSource(list);
             HashMap map = new HashMap();
             map.put("parameter1", string.toUpperCase());
-            map.put("parameter2", par2+"");
+            map.put("parameter2", par2 + "");
             map.put("parameter3", (38 - par2) + "");
             UtilityPrint.printReport(dt, "report1", map);
         } catch (Exception ex) {

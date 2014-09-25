@@ -15,16 +15,16 @@ public class Ishihara {
         Ishihara ishihara = new Ishihara();
         Object[] answer = new Object[38];
 
-        answer[0] = 12;
-        answer[1] = 8;
-        answer[2] = 6;
-        answer[3] = 29;
-        answer[4] = 57;
-        answer[5] = "";
-        answer[6] = 3;
-        answer[7] = 15;
-        answer[8] = 74;
-        answer[9] = 1;
+        answer[0] = 1;
+        answer[1] = 2;
+        answer[2] = 3;
+        answer[3] = 4;
+        answer[4] = 5;
+        answer[5] = 3;
+        answer[6] = 4;
+        answer[7] = 5;
+        answer[8] = 2;
+        answer[9] = 2;
         answer[10] = 6;
         answer[11] = 97;
         answer[12] = 45;
@@ -40,10 +40,10 @@ public class Ishihara {
         answer[22] = 42;
         answer[23] = 35;
         answer[24] = 96;
-        answer[25] = 1;
+        answer[25] = 2;
         answer[26] = 2;
-        answer[27] = "0";
-        answer[28] = "0";
+        answer[27] = 0;
+        answer[28] = 0;
         answer[29] = 1;
         answer[30] = 1;
         answer[31] = 1;
@@ -56,21 +56,24 @@ public class Ishihara {
 
         ishihara.setAnswer(answer);
 
-        int wrong = ishihara.getWrong();
-
-        String hasil = "";
-        if (wrong <= 4) {
-            hasil = "PENGLIHATAN NORMAL";
-        } else if (ishihara.protan()) {
-            hasil = "PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
-        } else if (ishihara.deutan()) {
-            hasil = "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
-        } else if (wrong <= 8) {
-            hasil = "PENGLIHATAN BUTA WARNA PARSIAL";
-        } else {
-            hasil = "BUTA WARNA TOTAL";
-        }
-        System.out.println("HASIL : " + hasil);
+//        int wrong = ishihara.getWrong();
+//
+//        String hasil = "";
+//        if (wrong <= 4) {
+//            hasil = "PENGLIHATAN NORMAL";
+//        } else if (ishihara.protan()) {
+//            hasil = "PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
+//        } else if (ishihara.deutan()) {
+//            hasil = "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
+//        } else if (wrong <= 8) {
+//            hasil = "PENGLIHATAN BUTA WARNA PARSIAL";
+//        } else {
+//            hasil = "BUTA WARNA TOTAL";
+//        }
+//        System.out.println("HASIL : " + wrong);
+//        System.out.println("HASIL : " + hasil);
+        System.out.println("HASIL : " + ishihara.getResult());
+        System.out.println("HASIL : ");
         System.out.println("HASIL : " + ishihara.getResult());
     }
 
@@ -85,16 +88,16 @@ public class Ishihara {
 
     public String getResult() {
         int wrong = getWrong();
-  
-        String hasil = " | According to this test you  ";
+        System.out.println("JUMLAH SALAH : "+wrong);
+        String hasil = "According to this test you  ";
         if (wrong <= 4) {
             hasil = hasil + "are NOT COLOR BLIND (NORMAL)";
-        } else if (protan()) {
+        } else if (protan() && wrong <= 8) {
             hasil = hasil + "have some form of red color blindness (PROTAN).";
-        } else if (deutan()) {
+        } else if (deutan() && wrong <= 8) {
             hasil = hasil + "have some form of red color blindness (DEUTAN)";
         } else if (wrong <= 8) {
-            hasil = hasil + "have some form of red-green color blindness. (PARSIAL COLOR BLIND(";
+            hasil = hasil + "have some form of red-green color blindness (PARSIAL COLOR BLIND).";
         } else {
             hasil = hasil + "TOTAL COLOR BLIND";
         }
@@ -107,10 +110,13 @@ public class Ishihara {
         this.correct = new Object[38];
         this.optional = new Object[38];
         this.answer = new Object[38];
-
         for (int i = 0; i < 38; i++) {
             plate[i] = i + 1;
         }
+        reset();
+    }
+
+    public void reset() {
 
         correct[0] = 12;
         correct[1] = 8;
@@ -194,17 +200,17 @@ public class Ishihara {
 
     public boolean check(Plate plate) {
         try {
-            if (correct[plate.getPlate()].toString().equals(plate.getAnswer()+"")) {
+            if (correct[plate.getPlate()].toString().equals(plate.getAnswer() + "")) {
                 return true;
             } else {
 
                 String[] string = optional[plate.getPlate()].toString().split(";");
                 if (string.length == 1) {
-                    if (string[0].equals(plate.getAnswer()+"")) {
+                    if (string[0].equals(plate.getAnswer() + "")) {
                         return true;
                     }
                 } else {
-                    if (string[0].equals(plate.getAnswer()+"") || string[1].equals(plate.getAnswer()+"")) {
+                    if (string[0].equals(plate.getAnswer() + "") || string[1].equals(plate.getAnswer() + "")) {
                         return true;
                     }
                 }
@@ -233,9 +239,10 @@ public class Ishihara {
     }
 
     public int getWrong() {
+        reset();
         int x = 0;
         for (int i = 0; i < 38; i++) {
-            if (!correct[i].toString().equals(answer[i]+"")) {
+            if (!correct[i].toString().equals(answer[i] + "")) {
                 x++;
             }
         }
@@ -250,7 +257,7 @@ public class Ishihara {
 
         int x = 0;
         for (int i = 21; i <= 24; i++) {
-            if (correct[i].toString().equals(answer[i]+"")) {
+            if (correct[i].toString().equals(answer[i] + "")) {
                 x++;
             }
         }
@@ -266,7 +273,7 @@ public class Ishihara {
 
         int x = 0;
         for (int i = 21; i <= 24; i++) {
-            if (correct[i].toString().equals(answer[i]+"")) {
+            if (correct[i].toString().equals(answer[i] + "")) {
                 x++;
             }
         }

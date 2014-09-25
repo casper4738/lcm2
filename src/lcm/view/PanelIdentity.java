@@ -105,6 +105,7 @@ public class PanelIdentity extends javax.swing.JPanel {
         iPanelGlass3 = new lcm.component.IPanelGlass();
         iPanelGlass2 = new lcm.component.IPanelGlass();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(547, 436));
 
@@ -355,6 +356,18 @@ public class PanelIdentity extends javax.swing.JPanel {
         });
         iPanelGlass2.add(jButton1);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/login.png"))); // NOI18N
+        jButton2.setText("Data User");
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setPreferredSize(new java.awt.Dimension(125, 59));
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        iPanelGlass2.add(jButton2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -402,6 +415,10 @@ public class PanelIdentity extends javax.swing.JPanel {
         frameMain.showPanelTest();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        frameMain.showPanelUser();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private lcm.component.IPa iPa1;
@@ -432,6 +449,7 @@ public class PanelIdentity extends javax.swing.JPanel {
     private lcm.component.IPanelGlass iPanelGlass3;
     private lcm.component.IPanelGlass iPanelGlass4;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

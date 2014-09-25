@@ -23,6 +23,7 @@ public class FrameMain extends javax.swing.JFrame {
     private PanelIshiharaTest panelIshiharaTest;
     private PanelTestResult panelTestResult;
     private PanelIdentity panelIdentity;
+    private PanelDataUser panelDataUser;
     public static User USER;
 
     public FrameMain() {
@@ -36,11 +37,13 @@ public class FrameMain extends javax.swing.JFrame {
         panelIshiharaTest = new PanelIshiharaTest(this);
         panelTestResult = new PanelTestResult(this);
         panelIdentity = new PanelIdentity(this);
+        panelDataUser = new PanelDataUser(this);
         
         panelIntroduction.setOpaque(false);
         panelIshiharaTest.setOpaque(false);
         panelTestResult.setOpaque(false);
         panelIdentity.setOpaque(false);
+        panelDataUser.setOpaque(false);
 
         panelMain.add(panelIntroduction, "card1");
         panelMain.add(panelIshiharaTest, "card2");
@@ -48,12 +51,12 @@ public class FrameMain extends javax.swing.JFrame {
 
         jPanel1.add(panelIdentity, "card1");
         jPanel1.add(panelTest, "card2");
+        jPanel1.add(panelDataUser, "card3");
 
         setResizable(false);
         setLocationRelativeTo(null);
         buttonTestResult.setEnabled(false);
         buttonIshiharaTest.setEnabled(false);
-        
     }
     
     public void showPanelIdentity() {
@@ -62,6 +65,11 @@ public class FrameMain extends javax.swing.JFrame {
     
     public void showPanelTest() {
         ((CardLayout) jPanel1.getLayout()).show(jPanel1, "card2");
+    }
+    
+    public void showPanelUser() {
+        panelDataUser.setData();
+        ((CardLayout) jPanel1.getLayout()).show(jPanel1, "card3");
     }
 
     /**
