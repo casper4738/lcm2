@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced14e9a-922f-48be-a7ca-975fc289b867">
-	<property name="ireport.zoom" value="1.24184264611831"/>
+	<property name="ireport.zoom" value="1.2418426461183103"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="39"/>
+	<property name="ireport.y" value="96"/>
 	<parameter name="parameter1" class="java.lang.String"/>
 	<parameter name="parameter2" class="java.lang.String"/>
 	<parameter name="parameter3" class="java.lang.String"/>
@@ -51,23 +51,22 @@
 			</staticText>
 			<image scaleImage="FillFrame">
 				<reportElement uuid="8794def7-8dc7-4d47-9ddf-036fd6ee967c" x="499" y="11" width="56" height="50"/>
+				<box>
+					<bottomPen lineWidth="2.0"/>
+				</box>
 				<imageExpression><![CDATA["01.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
 	<columnHeader>
 		<band height="721">
-			<image scaleImage="FillFrame">
-				<reportElement uuid="2fc6ec41-2e46-4349-9bae-75f4e35d789c" x="165" y="191" width="390" height="530"/>
-				<imageExpression><![CDATA["02.jpg"]]></imageExpression>
-			</image>
 			<textField>
 				<reportElement uuid="28043af0-af36-416a-bee3-ee643a07f825" x="100" y="72" width="442" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[" : "+$F{jobs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="100" y="211" width="408" height="20"/>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="218" width="371" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[" : "+$P{parameter3}]]></textFieldExpression>
 			</textField>
@@ -82,22 +81,17 @@
 				<textFieldExpression><![CDATA[" : "+$F{id}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="191" width="100" height="20"/>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="198" width="137" height="20"/>
 				<textElement/>
-				<text><![CDATA[JAWABAN BENAR :]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="067e3e2a-38e5-4fd4-b622-c8106928fc46" x="0" y="142" width="542" height="20"/>
-				<textElement/>
-				<text><![CDATA[HASIL TES :]]></text>
+				<text><![CDATA[Jumlah jawaban yang benar :]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="c11dc96d-90b9-4d3f-93b6-548c3731ccb3" x="0" y="162" width="542" height="29"/>
+				<reportElement uuid="c11dc96d-90b9-4d3f-93b6-548c3731ccb3" x="0" y="136" width="542" height="45"/>
 				<textElement/>
-				<textFieldExpression><![CDATA[$P{parameter1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Hasil Tes  : "+$P{parameter1}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="100" y="191" width="408" height="20"/>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="198" width="371" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[" : "+$P{parameter2}]]></textFieldExpression>
 			</textField>
@@ -114,12 +108,12 @@
 			<staticText>
 				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="52" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[UMUR]]></text>
+				<text><![CDATA[Umur ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="72" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[PEKERJAAN]]></text>
+				<text><![CDATA[Pekerjaan]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="12" width="100" height="20"/>
@@ -127,19 +121,160 @@
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="211" width="100" height="20"/>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="218" width="137" height="20"/>
 				<textElement/>
-				<text><![CDATA[JAWABAN SALAH :]]></text>
+				<text><![CDATA[Jumlah jawaban yang salah :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="32" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[NAMA]]></text>
+				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="92" width="100" height="20"/>
 				<textElement/>
-				<text><![CDATA[ALAMAT]]></text>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a36215a9-debd-4b79-9089-d047ea324ed4" x="50" y="322" width="150" height="20"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jenis/Tipe Buta Warna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="342" width="150" height="27"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Penglihatan Normal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="322" width="290" height="20"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Ketentuan/Syarat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="369" width="150" height="73"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Penglihatan lemah terhadap warna merah (PROTAN)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="442" width="150" height="71"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Penglihatan lemah terhadap warna hijau (DEUTAN)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="513" width="150" height="20"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Buta Warna Parsial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="533" width="150" height="30"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Buta Warna Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="342" width="290" height="27"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Jika gambar/plate 1-38 dijawab dengan benar semua atau jumlah jawaban yang salah kurang dari 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="442" width="290" height="69"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Jika gambar 1-38 jumlah jawaban yang salah kurang dari 8 dan pada gambar/plate urutan ke-22 dijawab 2, gambar/plate urutan ke-23 dijawab 4,
+ gambar/plate urutan ke-24 dijawab 3 dan gambar/plate urutan ke-25 dijawab 9
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="511" width="290" height="22"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Jika gambar 1-38 jumlah jawaban yang salah kurang dari 8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="369" width="290" height="73"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Jika gambar 1-38 jumlah jawaban yang salah kurang dari 8 dan pada gambar/plate urutan ke-22 dijawab 6, gambar/plate urutan ke-23 dijawab 2,
+gambar/plate urutan ke-24 dijawab 5 dan gambar/plate urutan ke-25 dijawab 6
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="533" width="290" height="30"/>
+				<box leftPadding="5" rightPadding="5">
+					<topPen lineWidth="2.0"/>
+					<leftPen lineWidth="2.0"/>
+					<bottomPen lineWidth="2.0"/>
+					<rightPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Jika gambar / plate 1 -38 dijawab dengan salah semua atau jumlah jawaban salah lebih dari 8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="37" y="290" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Keterangan : ]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
