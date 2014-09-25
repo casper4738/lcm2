@@ -28,7 +28,7 @@ public class FrameMain extends javax.swing.JFrame {
 
     public FrameMain() {
         initComponents();
-        
+        new java.io.File("result").mkdirs();
         USER = new User();
 
         setTitle("APLIKASI TES BUTA WARNA MENGGUNAKAN LCM");
