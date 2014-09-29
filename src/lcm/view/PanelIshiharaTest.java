@@ -191,7 +191,7 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
 
         jPanel4.setOpaque(false);
 
-        buttonResult.setText("Show Result");
+        buttonResult.setText("Hasil Tes");
         buttonResult.setPreferredSize(new java.awt.Dimension(85, 28));
         buttonResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

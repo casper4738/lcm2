@@ -49,28 +49,6 @@ public class LCM {
         return ((a * z) + c) % m;
     }
 
-    public void rule1() {
-        double x1 = (m / 100.0);
-        double x2 = m - Math.sqrt(m);
-        boolean x = (x1 < a) && (a < x2);
-        System.out.println("x1: " + x1);
-        System.out.println("x2: " + x2);
-        System.out.println("Hasil:" + x);
-    }
-
-    public void rule2() {
-        int x = c % 2;
-        System.out.println("Hasil:" + ((c % 2) == 1));
-
-        int v1 = c * c;
-        int v2 = c + c;
-        System.out.println("Hasil:" + (v1 != v2));
-    }
-
-    public void rule3() {
-
-    }
-
     private int c;
     private int m;
     private int a;
