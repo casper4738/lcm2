@@ -99,12 +99,12 @@ public class PanelTestResult extends javax.swing.JPanel {
             String ket = "";
             if (wrong <= 4) {
                 hasil = hasil + "Anda memiliki penglihatan normal";
-            } else if (protan >= 3 && total <= 8) {
+            } else if (protan >= 3 && total <= 5) {
                 hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadap warna merah (PROTAN)";
                 ket = "Pelinghatan lemah terhadap lemah terhadap warna merah (PROTAN) terjadinya karena sel "
                         + "kerucut warna merah tidak berfungsi dengan baik, sehingga penderita kurang sensitif "
                         + "atau kesulitan mengenali warna merah dan perpaduannya.";
-            } else if (deutan >= 3 && total <= 8) {
+            } else if (deutan >= 3 && total <= 5) {
                 hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadao warna hijau (DEUTRAN)";
                     ket = "Pelinghatan lemah terhadap lemah terhadap warna hijau (DEUTRAN) terjadinya karena sel "
                         + "kerucut warna hijau tidak berfungsi dengan baik, sehingga penderita kurang sensitif "
@@ -225,12 +225,12 @@ public class PanelTestResult extends javax.swing.JPanel {
             String ket = "";
             if (wrong <= 4) {
                 hasil = hasil + "Anda memiliki penglihatan normal";
-            } else if (protan >= 3 && total <= 8) {
+            } else if (protan >= 3 && total <= 5) {
                 hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadap warna merah (PROTAN)";
                 ket = "Pelinghatan lemah terhadap lemah terhadap warna merah (PROTAN) terjadinya karena sel "
                         + "kerucut warna merah tidak berfungsi dengan baik, sehingga penderita kurang sensitif "
                         + "atau kesulitan mengenali warna merah dan perpaduannya.";
-            } else if (deutan >= 3 && total <= 8) {
+            } else if (deutan >= 3 && total <= 5) {
                 hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadao warna hijau (DEUTRAN)";
                     ket = "Pelinghatan lemah terhadap lemah terhadap warna hijau (DEUTRAN) terjadinya karena sel "
                         + "kerucut warna hijau tidak berfungsi dengan baik, sehingga penderita kurang sensitif "

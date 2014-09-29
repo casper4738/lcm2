@@ -97,10 +97,10 @@ public class Ishihara {
         String ket = "";
         if (wrong <= 4) {
             hasil = hasil + "Anda memiliki penglihatan normal";
-        } else if (protan >= 3 && total <= 8) {
+        } else if (protan >= 3 && total <= 5) {
             hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadap warna merah (PROTAN)";
 
-        } else if (deutan >= 3 && total <= 8) {
+        } else if (deutan >= 3 && total <= 5) {
             hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadao warna hijau (DEUTRAN)";
         } else if (total < 38) {
             hasil = hasil + "Anda terindikasi mengalami penglihatan Buta Warna Parsial";
