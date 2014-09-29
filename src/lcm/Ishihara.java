@@ -93,19 +93,20 @@ public class Ishihara {
         int deutan = deutan();
         int total = wrong - protan - deutan;
 
-        String hasil = "According to this test you  ";
+        String hasil = "";
+        String ket = "";
         if (wrong <= 4) {
-            hasil = hasil + "are NOT COLOR BLIND (NORMAL)";
+            hasil = hasil + "Anda memiliki penglihatan normal";
         } else if (protan >= 3 && total <= 8) {
-            hasil = hasil + "have some form of red color blindness (PROTAN).";
-        } else if (deutan >= 3 && total <= 8) {
-            hasil = hasil + "have some form of red color blindness (DEUTAN)";
-        } else if (total <= 8) {
-            hasil = hasil + "have some form of red-green color blindness (PARSIAL COLOR BLIND).";
-        } else {
-            hasil = hasil + "TOTAL COLOR BLIND";
-        }
+            hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadap warna merah (PROTAN)";
 
+        } else if (deutan >= 3 && total <= 8) {
+            hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadao warna hijau (DEUTRAN)";
+        } else if (total < 38) {
+            hasil = hasil + "Anda terindikasi mengalami penglihatan Buta Warna Parsial";
+        } else {
+            hasil = hasil + "Anda terindikasi mengalami penglihatan Buta Warna Total";
+        }
         return hasil;
     }
 

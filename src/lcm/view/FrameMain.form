@@ -43,7 +43,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-              <BorderConstraints direction="North"/>
+              <BorderConstraints direction="First"/>
             </Constraint>
           </Constraints>
 
@@ -79,13 +79,13 @@
                   <Font name="Batang" size="24" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="COLOR BLIND TEST"/>
+                <Property name="text" type="java.lang.String" value="TES BUTA WARNA"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Ishihara Test"/>
+                <Property name="text" type="java.lang.String" value="Tes Ishihara"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -161,7 +161,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JButton" name="buttonIntroduction">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Introduction"/>
+                        <Property name="text" type="java.lang.String" value="Pengenalan"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonIntroductionActionPerformed"/>
@@ -169,7 +169,7 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="buttonIshiharaTest">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Ishihara Test"/>
+                        <Property name="text" type="java.lang.String" value="Tes Ishihara "/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonIshiharaTestActionPerformed"/>
@@ -177,7 +177,7 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="buttonTestResult">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Test Result"/>
+                        <Property name="text" type="java.lang.String" value="Hasil Tes"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonTestResultActionPerformed"/>

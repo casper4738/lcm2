@@ -2,10 +2,11 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced14e9a-922f-48be-a7ca-975fc289b867">
 	<property name="ireport.zoom" value="1.2418426461183103"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="218"/>
 	<parameter name="parameter1" class="java.lang.String"/>
 	<parameter name="parameter2" class="java.lang.String"/>
 	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="parameter4" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -66,7 +67,7 @@
 				<textFieldExpression><![CDATA[" : "+$F{jobs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="218" width="371" height="20"/>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="200" width="371" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[" : "+$P{parameter3}]]></textFieldExpression>
 			</textField>
@@ -81,7 +82,7 @@
 				<textFieldExpression><![CDATA[" : "+$F{id}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="198" width="137" height="20"/>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="180" width="137" height="20"/>
 				<textElement/>
 				<text><![CDATA[Jumlah jawaban yang benar :]]></text>
 			</staticText>
@@ -91,7 +92,7 @@
 				<textFieldExpression><![CDATA["Hasil Tes  : "+$P{parameter1}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="198" width="371" height="20"/>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="180" width="371" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[" : "+$P{parameter2}]]></textFieldExpression>
 			</textField>
@@ -121,7 +122,7 @@
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="218" width="137" height="20"/>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="200" width="137" height="20"/>
 				<textElement/>
 				<text><![CDATA[Jumlah jawaban yang salah :]]></text>
 			</staticText>
@@ -136,146 +137,55 @@
 				<text><![CDATA[Alamat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="a36215a9-debd-4b79-9089-d047ea324ed4" x="50" y="322" width="150" height="20"/>
-				<box>
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Jenis/Tipe Buta Warna]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="342" width="150" height="27"/>
-				<box>
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Penglihatan Normal]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="322" width="290" height="20"/>
-				<box>
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Ketentuan/Syarat]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="369" width="150" height="73"/>
-				<box>
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Penglihatan lemah terhadap warna merah (PROTAN)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="442" width="150" height="71"/>
-				<box>
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Penglihatan lemah terhadap warna hijau (DEUTAN)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="513" width="150" height="20"/>
-				<box>
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Buta Warna Parsial]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="50" y="533" width="150" height="30"/>
-				<box>
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Buta Warna Total]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="342" width="290" height="27"/>
-				<box leftPadding="5" rightPadding="5">
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-				<text><![CDATA[Jika gambar/plate 1-38 dijawab dengan benar semua atau jumlah jawaban yang salah kurang dari 4]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="442" width="290" height="69"/>
-				<box leftPadding="5" rightPadding="5">
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-				<text><![CDATA[Jika gambar 1-38 jumlah jawaban yang salah kurang dari 8 dan pada gambar/plate urutan ke-22 dijawab 2, gambar/plate urutan ke-23 dijawab 4,
- gambar/plate urutan ke-24 dijawab 3 dan gambar/plate urutan ke-25 dijawab 9
-]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="511" width="290" height="22"/>
-				<box leftPadding="5" rightPadding="5">
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-				<text><![CDATA[Jika gambar 1-38 jumlah jawaban yang salah kurang dari 8]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="369" width="290" height="73"/>
-				<box leftPadding="5" rightPadding="5">
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-				<text><![CDATA[Jika gambar 1-38 jumlah jawaban yang salah kurang dari 8 dan pada gambar/plate urutan ke-22 dijawab 6, gambar/plate urutan ke-23 dijawab 2,
-gambar/plate urutan ke-24 dijawab 5 dan gambar/plate urutan ke-25 dijawab 6
-]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7148a8c7-a47e-4d1c-a31d-22f2bd9a13e7" x="200" y="533" width="290" height="30"/>
-				<box leftPadding="5" rightPadding="5">
-					<topPen lineWidth="2.0"/>
-					<leftPen lineWidth="2.0"/>
-					<bottomPen lineWidth="2.0"/>
-					<rightPen lineWidth="2.0"/>
-				</box>
-				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
-				<text><![CDATA[Jika gambar / plate 1 -38 dijawab dengan salah semua atau jumlah jawaban salah lebih dari 8]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="37" y="290" width="100" height="20"/>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="28" y="318" width="225" height="20"/>
 				<textElement/>
-				<text><![CDATA[Keterangan : ]]></text>
+				<text><![CDATA[Cara mengatasi atau menyembuhkan :]]></text>
 			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="42" y="338" width="211" height="20"/>
+				<textElement/>
+				<text><![CDATA[Menggunakan kacamata buta warna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="42" y="358" width="211" height="20"/>
+				<textElement/>
+				<text><![CDATA[Menggunakan lensa kontak buta warna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="42" y="378" width="211" height="20"/>
+				<textElement/>
+				<text><![CDATA[Pengobatan alternative / terapi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="42" y="398" width="457" height="33"/>
+				<textElement/>
+				<text><![CDATA[Mengkonsumsi bahan-bahan alami seperti : susu kambing, bawang merah, buah papaya, buah apel, belimbing, susu sapi, buah naga, daun sirih]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="28" y="338" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[1.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="28" y="358" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="28" y="378" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[3.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="28" y="398" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[4.]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="0" y="231" width="555" height="73"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Keterangan : "+$P{parameter4}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 </jasperReport>

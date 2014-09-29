@@ -13,4 +13,10 @@ import swingx.component.CurvesPanelOther;
  */
 public class IPanelBg extends CurvesPanelOther{
     
+    public IPanelBg() {
+        try {
+//            setImage(getClass().getResource("/lcm/resources/Delete.png").openStream());
+        } catch (Exception ex) { }
+    }
+    
 }

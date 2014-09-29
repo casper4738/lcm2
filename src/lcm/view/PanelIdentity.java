@@ -114,12 +114,12 @@ public class PanelIdentity extends javax.swing.JPanel {
         iPanelGlass1.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Age :");
+        jLabel3.setText("Usia :");
         iPanelGlass1.add(jLabel3);
         jLabel3.setBounds(10, 97, 52, 14);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setText("Name :");
+        jLabel2.setText("Nama :");
         iPanelGlass1.add(jLabel2);
         jLabel2.setBounds(10, 57, 52, 14);
 
@@ -129,14 +129,14 @@ public class PanelIdentity extends javax.swing.JPanel {
         jLabel1.setBounds(10, 22, 52, 14);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Jobs :");
+        jLabel4.setText("Pekerjaan :");
         iPanelGlass1.add(jLabel4);
-        jLabel4.setBounds(10, 130, 52, 14);
+        jLabel4.setBounds(10, 130, 80, 14);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("Address :");
+        jLabel5.setText("Alamat :");
         iPanelGlass1.add(jLabel5);
-        jLabel5.setBounds(10, 167, 52, 14);
+        jLabel5.setBounds(10, 167, 70, 20);
 
         jScrollPane1.setOpaque(false);
 
@@ -345,7 +345,7 @@ public class PanelIdentity extends javax.swing.JPanel {
         iPanelGlass3.setBounds(10, 10, 510, 260);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/Startup-Refresh.PNG"))); // NOI18N
-        jButton1.setText("<html>Save And Start Test </html>");
+        jButton1.setText("Simpan Dan Lanjutkan");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/Startup-Save.PNG"))); // NOI18N
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);

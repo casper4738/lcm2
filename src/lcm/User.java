@@ -19,6 +19,7 @@ public class User {
     private String parameter1;
     private String parameter2;
     private String parameter3;
+    private String parameter4;
 
     public User() {
     }
@@ -45,6 +46,15 @@ public class User {
 
     public void setParameter3(String parameter3) {
         this.parameter3 = parameter3;
+    }
+    
+    
+    public String getParameter4() {
+        return parameter4;
+    }
+
+    public void setParameter4(String parameter4) {
+        this.parameter3 = parameter4;
     }
 
     public String getId() {

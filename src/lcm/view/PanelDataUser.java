@@ -189,7 +189,7 @@ public class PanelDataUser extends javax.swing.JPanel {
                 .addComponent(iTable1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Back");
+        jButton1.setText("Kembali");
         jButton1.setPreferredSize(new java.awt.Dimension(85, 23));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,6 +285,7 @@ class ViewAction extends AbstractAction {
             map.put("parameter1", user.getParameter1());
             map.put("parameter2", user.getParameter2());
             map.put("parameter3", user.getParameter3());
+            map.put("parameter4", user.getParameter4());
             UtilityPrint.printReport(dt, "report1", map);
         } catch (Exception ex) {
         }

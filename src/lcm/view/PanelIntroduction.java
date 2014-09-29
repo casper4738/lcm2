@@ -39,7 +39,7 @@ public class PanelIntroduction extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel1.setText("<html><b> Ishihara 38 Plates Test</b>\n<br/>\nThe Ishihara Test is the most well known color blindness test all around the world. It consists of 38 so called pseudoisochromatic plates,\n each of them showing either a number or some lines.  \n<br/><br/><br/>\n <b> How the test works:  </b><br/>\n For each plate you have to either enter the number or you have to  choose the number of lines you can see. \nIf you don't see anything just leave the input field empty. </html>");
+        jLabel1.setText("<html><b>Test Ishihara 38 Plates </b>\n<br/>\n    Tes Ishihara adalah tes buta warna yang paling terkenal di seluruh dunia. Tes ini terdiri dari 38 plate  yang disebut plate pseudoisochromatic . Tes buta warna Ishihara terdiri dari lembaran yang didalamnya terdapat titik-titik dengan berbagai warna dan ukuran. Titik berwarna tersebut disusun sehingga membentuk lingkaran. Warna titik itu dibuat sedemikian rupa sehingga orang buta warna tidak akan melihat perbedaan warna seperti yang dilihat orang normal.\n<br><br>\n\nCara mengerjakan tes : <br>\nUntuk setiap plate anda harus memasukkan nomor atau anda harus memilih jumlah baris yang anda lihat. Anda diberikan waktu 10 detik untuk memasukkan jawaban, setelah 10 detik anda tidak memasukkan jawaban maka gambar akan berganti ke gambar selanjutnya dan jawaban anda akan bernilai kosong atau 0.\n </html>");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jPanel2.setOpaque(false);
@@ -47,7 +47,8 @@ public class PanelIntroduction extends javax.swing.JPanel {
 
         jPanel1.setOpaque(false);
 
-        jButton1.setText("Start Test");
+        jButton1.setText("Mulai");
+        jButton1.setPreferredSize(new java.awt.Dimension(75, 23));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -84,8 +85,8 @@ public class PanelIntroduction extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

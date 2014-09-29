@@ -117,7 +117,7 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calisto MT", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Plate 01 from 38");
+        jLabel1.setText("Plate 01 dari 38");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         panelAnswer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

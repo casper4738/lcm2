@@ -102,10 +102,10 @@ public class FrameMain extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Batang", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("COLOR BLIND TEST");
+        jLabel1.setText("TES BUTA WARNA");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ishihara Test");
+        jLabel2.setText("Tes Ishihara");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -128,7 +128,7 @@ public class FrameMain extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        iPanelBg1.add(jPanel3, java.awt.BorderLayout.NORTH);
+        iPanelBg1.add(jPanel3, java.awt.BorderLayout.PAGE_START);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setOpaque(false);
@@ -141,7 +141,7 @@ public class FrameMain extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setOpaque(false);
 
-        buttonIntroduction.setText("Introduction");
+        buttonIntroduction.setText("Pengenalan");
         buttonIntroduction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonIntroductionActionPerformed(evt);
@@ -149,7 +149,7 @@ public class FrameMain extends javax.swing.JFrame {
         });
         jPanel2.add(buttonIntroduction);
 
-        buttonIshiharaTest.setText("Ishihara Test");
+        buttonIshiharaTest.setText("Tes Ishihara ");
         buttonIshiharaTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonIshiharaTestActionPerformed(evt);
@@ -157,7 +157,7 @@ public class FrameMain extends javax.swing.JFrame {
         });
         jPanel2.add(buttonIshiharaTest);
 
-        buttonTestResult.setText("Test Result");
+        buttonTestResult.setText("Hasil Tes");
         buttonTestResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonTestResultActionPerformed(evt);

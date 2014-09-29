@@ -99,7 +99,7 @@
           <Font name="Calisto MT" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Plate 01 from 38"/>
+        <Property name="text" type="java.lang.String" value="Plate 01 dari 38"/>
         <Property name="verticalAlignment" type="int" value="3"/>
       </Properties>
     </Component>

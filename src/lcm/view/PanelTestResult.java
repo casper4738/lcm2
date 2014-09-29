@@ -95,17 +95,28 @@ public class PanelTestResult extends javax.swing.JPanel {
             int deutan = ishihara.deutan();
             int total = wrong - protan - deutan;
 
-            String hasil = "BERDASARKAN TES ";
+            String hasil = "";
+            String ket = "";
             if (wrong <= 4) {
-                hasil = hasil + "ANDA MEMILIKI PENGLIHATAN NORMAL";
+                hasil = hasil + "Anda memiliki penglihatan normal";
             } else if (protan >= 3 && total <= 8) {
-                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
+                hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadap warna merah (PROTAN)";
+                ket = "Pelinghatan lemah terhadap lemah terhadap warna merah (PROTAN) terjadinya karena sel "
+                        + "kerucut warna merah tidak berfungsi dengan baik, sehingga penderita kurang sensitif "
+                        + "atau kesulitan mengenali warna merah dan perpaduannya.";
             } else if (deutan >= 3 && total <= 8) {
-                hasil = hasil + "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
-            } else if (total <= 8) {
-                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
+                hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadao warna hijau (DEUTRAN)";
+                    ket = "Pelinghatan lemah terhadap lemah terhadap warna hijau (DEUTRAN) terjadinya karena sel "
+                        + "kerucut warna hijau tidak berfungsi dengan baik, sehingga penderita kurang sensitif "
+                        + "atau kesulitan mengenali warna merah dan perpaduannya.";
+            } else if (total < 38) {
+                hasil = hasil + "Anda terindikasi mengalami penglihatan Buta Warna Parsial";
+                ket = "Penglihatan Buta Warna Parsial terjadi karena satu dari tiga sel kerucut tidak ada.";
             } else {
-                hasil = hasil + "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
+                hasil = hasil + "Anda terindikasi mengalami penglihatan Buta Warna Total";
+                ket = "Penglihatan Buta Warna Total terjadi karena kondisi retina mata "
+                        + "yang mengalami kerusakan total dalam merespon warna sehingga yang "
+                        + "terlihat hanya putih dan hitam yang mapmpu diterima retina.";
             }
 
             Properties properties = new Properties();
@@ -115,9 +126,10 @@ public class PanelTestResult extends javax.swing.JPanel {
             properties.setProperty("JOBS", FrameMain.USER.getJobs() + "");
             properties.setProperty("ADDRESS", FrameMain.USER.getAddress());
             properties.setProperty("NUMBER_TEST", FrameMain.USER.getNumberTest() + "");
-            properties.setProperty("PARAMETER1", hasil.toUpperCase());
+            properties.setProperty("PARAMETER1", hasil);
             properties.setProperty("PARAMETER2", par2 + "");
             properties.setProperty("PARAMETER3", (38 - par2) + "");
+            properties.setProperty("PARAMETER4", ket);
             properties.storeToXML(new FileOutputStream(new File("./result/" + FrameMain.USER.getId() + ".xml")), "LCM - ISHIHARA");
 
         } catch (Exception ex) {
@@ -157,7 +169,7 @@ public class PanelTestResult extends javax.swing.JPanel {
 
         labelResult.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        jButton1.setText("PRINT");
+        jButton1.setText("CETAK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -209,24 +221,36 @@ public class PanelTestResult extends javax.swing.JPanel {
             int deutan = ishihara.deutan();
             int total = wrong - protan - deutan;
 
-            String hasil = "BERDASARKAN TES ";
+            String hasil = "";
+            String ket = "";
             if (wrong <= 4) {
-                hasil = hasil + "ANDA MEMILIKI PENGLIHATAN NORMAL";
+                hasil = hasil + "Anda memiliki penglihatan normal";
             } else if (protan >= 3 && total <= 8) {
-                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN LEMAH TERHADAP WARNA MERAH (PROTAN)";
+                hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadap warna merah (PROTAN)";
+                ket = "Pelinghatan lemah terhadap lemah terhadap warna merah (PROTAN) terjadinya karena sel "
+                        + "kerucut warna merah tidak berfungsi dengan baik, sehingga penderita kurang sensitif "
+                        + "atau kesulitan mengenali warna merah dan perpaduannya.";
             } else if (deutan >= 3 && total <= 8) {
-                hasil = hasil + "PENGLIHATAN LEMAH TERHADAP WARNA HIJAU (DEUTAN)";
-            } else if (total <= 8) {
-                hasil = hasil + "ANDA TERINDIKASI MENGALAMI PENGLIHATAN BUTA WARNA PARSIAL";
+                hasil = hasil + "Anda terindikasi mengalami penglihatan lemah terhadao warna hijau (DEUTRAN)";
+                    ket = "Pelinghatan lemah terhadap lemah terhadap warna hijau (DEUTRAN) terjadinya karena sel "
+                        + "kerucut warna hijau tidak berfungsi dengan baik, sehingga penderita kurang sensitif "
+                        + "atau kesulitan mengenali warna merah dan perpaduannya.";
+            } else if (total < 38) {
+                hasil = hasil + "Anda terindikasi mengalami penglihatan Buta Warna Parsial";
+                ket = "Penglihatan Buta Warna Parsial terjadi karena satu dari tiga sel kerucut tidak ada.";
             } else {
-                hasil = hasil + "ANDA TERINDIKASI MENGALAMI BUTA WARNA TOTAL";
+                hasil = hasil + "Anda terindikasi mengalami penglihatan Buta Warna Total";
+                ket = "Penglihatan Buta Warna Total terjadi karena kondisi retina mata "
+                        + "yang mengalami kerusakan total dalam merespon warna sehingga yang "
+                        + "terlihat hanya putih dan hitam yang mapmpu diterima retina.";
             }
 
             JRBeanCollectionDataSource dt = new JRBeanCollectionDataSource(list);
             HashMap map = new HashMap();
-            map.put("parameter1", hasil.toUpperCase());
+            map.put("parameter1", hasil);
             map.put("parameter2", par2 + "");
             map.put("parameter3", (38 - par2) + "");
+            map.put("parameter4", ket);
             UtilityPrint.printReport(dt, "report1", map);
         } catch (Exception ex) {
             ex.printStackTrace();
