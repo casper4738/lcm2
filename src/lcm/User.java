@@ -54,7 +54,7 @@ public class User {
     }
 
     public void setParameter4(String parameter4) {
-        this.parameter3 = parameter4;
+        this.parameter4 = parameter4;
     }
 
     public String getId() {

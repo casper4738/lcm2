@@ -101,6 +101,7 @@ public class PanelDataUser extends javax.swing.JPanel {
                 user.setParameter1(properties.getProperty("PARAMETER1"));
                 user.setParameter2(properties.getProperty("PARAMETER2"));
                 user.setParameter3(properties.getProperty("PARAMETER3"));
+                user.setParameter4(properties.getProperty("PARAMETER4"));
                 list.add(user);
             } catch (Exception ex) {
                 Logger.getLogger(PanelDataUser.class.getName()).log(Level.SEVERE, null, ex);
@@ -274,7 +275,7 @@ class ViewAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
-            int row = table.convertRowIndexToModel(table.getEditingRow());
+            int row = table.convertRowIndexToModel(table.getSelectedRow());
             User user = tableModel.get(row);
 
             List<User> list = new ArrayList<>();
@@ -307,11 +308,11 @@ class EditAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
-            int row = table.convertRowIndexToModel(table.getEditingRow());
-            tableModel.remove(row);
+            int row = table.convertRowIndexToModel(table.getSelectedRow());
             User user = tableModel.get(row);
-
+            System.out.println(user.getId());
             new File("./result/" +user.getId()+".xml").delete();
+            tableModel.remove(row);
         } catch (Exception ex) {
         }
     }
