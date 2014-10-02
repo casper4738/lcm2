@@ -15,11 +15,25 @@ public class User {
     private int age;
     private String jobs;
     private String address;
+
     private int numberTest;
+
+    private int numberTestP;
+    private int numberTestQ;
+
     private String parameter1;
     private String parameter2;
     private String parameter3;
     private String parameter4;
+    private String method;
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
 
     public User() {
     }
@@ -47,8 +61,7 @@ public class User {
     public void setParameter3(String parameter3) {
         this.parameter3 = parameter3;
     }
-    
-    
+
     public String getParameter4() {
         return parameter4;
     }
@@ -103,6 +116,22 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getNumberTestP() {
+        return numberTestP;
+    }
+
+    public void setNumberTestP(int numberTestP) {
+        this.numberTestP = numberTestP;
+    }
+
+    public int getNumberTestQ() {
+        return numberTestQ;
+    }
+
+    public void setNumberTestQ(int numberTestQ) {
+        this.numberTestQ = numberTestQ;
     }
 
 }

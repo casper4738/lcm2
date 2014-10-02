@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package lcm;
- 
+
 /**
  *
  * @author casper
@@ -32,26 +32,39 @@ public class LCM {
             z = main.getLinearCongruen(z);
             System.out.println((i + 1) + ":" + z);
         }
-        
+
         System.out.println("-----------------------------\n\n\n");
         for (int i = 0; i < 38; i++) {
-            for (int j = i+1; j < 38; j++) {
-                if(cek[i] == cek[j]) {
-                    System.out.println("salah : "+cek[i]);
+            for (int j = i + 1; j < 38; j++) {
+                if (cek[i] == cek[j]) {
+                    System.out.println("salah : " + cek[i]);
                 }
             }
         }
-        
 //        main.rule2();
-    }
-
-    public int getLinearCongruen(int z) {
-        return ((a * z) + c) % m;
     }
 
     private int c;
     private int m;
     private int a;
+    private int z0;
+    private final int[] listRandom;
+
+    public LCM() {
+        this.listRandom = new int[38];
+    }
+
+    public void run() {
+        int z = z0;
+        for (int i = 0; i < 38; i++) {
+            listRandom[i] = z;
+            z = getLinearCongruen(z);
+        }
+    }
+
+    public int getLinearCongruen(int z) {
+        return ((a * z) + c) % m;
+    }
 
     public void setA(int a) {
         this.a = a;
@@ -63,6 +76,14 @@ public class LCM {
 
     public void setM(int m) {
         this.m = m;
+    }
+
+    public void setZ0(int z0) {
+        this.z0 = z0;
+    }
+
+    public int[] getListRandom() {
+        return listRandom;
     }
 
 }

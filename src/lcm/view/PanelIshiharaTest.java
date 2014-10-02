@@ -10,11 +10,13 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import javax.swing.Timer;
+import lcm.BBS;
 import lcm.Ishihara;
 import lcm.LCM;
 import lcm.Plate;
@@ -369,40 +371,95 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
         number = 0;
         listPlates = new ArrayList<>();
 
-        LCM main = new LCM();
-        main.setA(1);
-        main.setC(7);
-        main.setM(38);
-
         try {
             Properties properties = new Properties();
             File file = new File("config.xml");
-            int id = 1;
+            int number_lcm = 1;
+            int number_test_p = 1;
+            int number_test_q = 1;
             if (file.exists()) {
                 properties.loadFromXML(new FileInputStream(file));
-                id = new Integer(properties.getProperty("NUMBER", "0")) + 1;
+                number_lcm = new Integer(properties.getProperty("NUMBER_TEST_LCM", "1"));
+                number_test_p = new Integer(properties.getProperty("NUMBER_TEST_P", "3"));
+                number_test_q = new Integer(properties.getProperty("NUMBER_TEST_Q", "3"));
             }
-            properties.setProperty("NUMBER", format.format(id));
             properties.storeToXML(new FileOutputStream(file), "APLIKASI TES BUTA WARNA MENGGUNAKAN LCM");
-            FrameMain.USER.setNumberTest(id);
+            FrameMain.USER.setNumberTest(number_lcm);
+            FrameMain.USER.setNumberTestP(number_test_p);
+            FrameMain.USER.setNumberTestQ(number_test_q);
         } catch (Exception e) {
         }
 
-        int z = FrameMain.USER.getNumberTest();
-        z = z % 38;
-        Ishihara ishihara = new Ishihara();
-        for (int i = 0; i < 38; i++) {
-            Plate plate = new Plate();
-            plate.setPlate(z);
-            plate.setType("");
-            plate.setAnswer("");
-            plate.setResult(false);
-            listPlates.add(plate);
-            
-//            System.out.print(ishihara.getCorrect(plate) +" | ");
-            
-            z = main.getLinearCongruen(z);
+        switch (FrameMain.USER.getMethod()) {
+            case "method1": {
+                try {
+                    Properties properties = new Properties();
+                    File file = new File("config.xml");
+                    int number_lcm = 1;
+                    if (file.exists()) {
+                        properties.loadFromXML(new FileInputStream(file));
+                        number_lcm = new Integer(properties.getProperty("NUMBER_TEST_LCM", "1")) + 1;
+                    }
+                    properties.setProperty("NUMBER_TEST_LCM", format.format(number_lcm));
+                    properties.storeToXML(new FileOutputStream(file), "APLIKASI TES BUTA WARNA MENGGUNAKAN LCM");
+                    FrameMain.USER.setNumberTest(number_lcm);
+                } catch (Exception e) {
+                }
+
+                System.out.println("method1");
+                int z = FrameMain.USER.getNumberTest();
+                z = z % 38;
+                LCM lcm = new LCM();
+                lcm.setA(1);
+                lcm.setC(7);
+                lcm.setM(38);
+                lcm.setZ0(z);
+                lcm.run();
+                int[] list = lcm.getListRandom();
+                Ishihara ishihara = new Ishihara();
+                for (int i = 0; i < 38; i++) {
+                    Plate plate = new Plate();
+                    plate.setPlate(list[i]);
+                    plate.setType("");
+                    plate.setAnswer("");
+                    plate.setResult(0);
+                    listPlates.add(plate);
+                }
+                break;
+            }
+            case "method2": {
+                System.out.println("method2");
+                BBS bbs = new BBS();
+                bbs.setP(BigInteger.valueOf(FrameMain.USER.getNumberTestP()));
+                bbs.setQ(BigInteger.valueOf(FrameMain.USER.getNumberTestQ()));
+                bbs.run();
+
+                try {
+                    Properties properties = new Properties();
+                    File file = new File("config.xml");
+                    int number_test_p = bbs.getP().intValue();
+                    int number_test_q = bbs.getQ().intValue();
+                    properties.setProperty("NUMBER_TEST_P", format.format(number_test_p));
+                    properties.setProperty("NUMBER_TEST_Q", format.format(number_test_q));
+                    properties.storeToXML(new FileOutputStream(file), "APLIKASI TES BUTA WARNA MENGGUNAKAN LCM");
+                    FrameMain.USER.setNumberTestP(number_test_p);
+                    FrameMain.USER.setNumberTestQ(number_test_q);
+                } catch (Exception e) {
+                }
+
+                int[] list = bbs.getListRandom();
+                for (int i = 0; i < 38; i++) {
+                    Plate plate = new Plate();
+                    plate.setPlate(list[i]);
+                    plate.setType("");
+                    plate.setAnswer("");
+                    plate.setResult(0);
+                    listPlates.add(plate);
+                }
+                break;
+            }
         }
+
 //
 //        for (int i = 0; i < 38; i++) {
 //            Plate plate = new Plate();

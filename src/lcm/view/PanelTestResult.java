@@ -47,10 +47,12 @@ public class PanelTestResult extends javax.swing.JPanel {
         table.getColumnModel().getColumn(4).setCellRenderer(new TableCellAlignmentRenderer(JLabel.CENTER));
         table.getColumnModel().getColumn(5).setCellRenderer(new TableCellRenderer());
 
-        table.getColumnModel().getColumn(0).setPreferredWidth(10);
-        table.getColumnModel().getColumn(3).setPreferredWidth(10);
-        table.getColumnModel().getColumn(4).setPreferredWidth(15);
-        table.getColumnModel().getColumn(5).setPreferredWidth(15);
+        table.getColumnModel().getColumn(0).setPreferredWidth(7);
+        table.getColumnModel().getColumn(1).setPreferredWidth(10);
+        table.getColumnModel().getColumn(2).setPreferredWidth(5);
+        table.getColumnModel().getColumn(3).setPreferredWidth(5);
+        table.getColumnModel().getColumn(4).setPreferredWidth(5);
+        table.getColumnModel().getColumn(5).setPreferredWidth(5);
         table.setRowHeight(23);
     }
 
@@ -84,7 +86,7 @@ public class PanelTestResult extends javax.swing.JPanel {
             int par3 = 0;
             for (int i = 0; i < tableModel.getRowCount(); i++) {
                 Plate p = tableModel.get(i);
-                if (p.isResult()) {
+                if (p.getResult() != 0) {
                     par2++;
                 }
             }
@@ -210,7 +212,7 @@ public class PanelTestResult extends javax.swing.JPanel {
             int par3 = 0;
             for (int i = 0; i < tableModel.getRowCount(); i++) {
                 Plate p = tableModel.get(i);
-                if (p.isResult()) {
+                if (p.getResult() != 0) {
                     par2++;
                 }
             }

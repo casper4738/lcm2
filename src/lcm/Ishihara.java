@@ -203,26 +203,29 @@ public class Ishihara {
         optional[37] = 1;
     }
 
-    public boolean check(Plate plate) {
+    public int check(Plate plate) {
+        //  0 - wrong
+        //  1 - correct
+        //  2 - weak
         try {
             if (correct[plate.getPlate()].toString().equals(plate.getAnswer() + "")) {
-                return true;
+                return 1;
             } else {
 
                 String[] string = optional[plate.getPlate()].toString().split(";");
                 if (string.length == 1) {
                     if (string[0].equals(plate.getAnswer() + "")) {
-                        return true;
+                        return 2;
                     }
                 } else {
                     if (string[0].equals(plate.getAnswer() + "") || string[1].equals(plate.getAnswer() + "")) {
-                        return true;
+                        return 2;
                     }
                 }
-                return false;
+                return 0;
             }
         } catch (Exception e) {
-            return false;
+            return 0;
         }
     }
 

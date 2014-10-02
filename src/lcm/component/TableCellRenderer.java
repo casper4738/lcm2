@@ -14,18 +14,20 @@ import javax.swing.table.DefaultTableCellRenderer;
  * @author casper
  */
 public class TableCellRenderer extends DefaultTableCellRenderer {
-    
+
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        boolean bool = (boolean) value;
+        int result = (int) value;
         JLabel label = new JLabel();
         label.setHorizontalAlignment(JLabel.CENTER);
-        if(bool) {
+        if (result == 1) {
             label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/Check.png")));
+        } else if (result == 2) {
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/Check2.png")));
         } else {
             label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/Delete.png")));
         }
         return label;
     }
-    
+
 }

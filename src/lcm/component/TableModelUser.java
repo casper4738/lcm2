@@ -83,11 +83,11 @@ public class TableModelUser extends AbstractTableModel {
             case 0:
                 return "ID";
             case 1:
-                return "NAME";
+                return "NAMA";
             case 2:
-                return "AGE";
+                return "USIA";
             case 3:
-                return "JOBS";
+                return "PEKERJAAN";
             default:
                 return null;
         }

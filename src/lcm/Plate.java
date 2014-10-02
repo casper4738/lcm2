@@ -15,12 +15,12 @@ public class Plate {
     private Object answer;
     private Object correct;
     private Object weak;
-    private boolean result;
+    private int result;
 
     public Plate() {
     }
 
-    public Plate(int plate, String type, Object answer, Object correct, Object weak, boolean result) {
+    public Plate(int plate, String type, Object answer, Object correct, Object weak, int result) {
         this.plate = plate;
         this.type = type;
         this.answer = answer;
@@ -69,11 +69,11 @@ public class Plate {
         this.weak = weak;
     }
 
-    public boolean isResult() {
+    public int getResult() {
         return result;
     }
 
-    public void setResult(boolean result) {
+    public void setResult(int result) {
         this.result = result;
     }
 

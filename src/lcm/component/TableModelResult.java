@@ -79,7 +79,7 @@ public class TableModelResult extends AbstractTableModel {
             case 4:
                 return list.get(rowIndex).getWeak();
             case 5:
-                return list.get(rowIndex).isResult();
+                return list.get(rowIndex).getResult();
             default:
                 return null;
         }
@@ -91,15 +91,15 @@ public class TableModelResult extends AbstractTableModel {
             case 0:
                 return "PLATE";
             case 1:
-                return "TYPE";
+                return "TIPE";
             case 2:
-                return "ANSWER";
+                return "JAWAB";
             case 3:
-                return "CORRECT";
+                return "JWB. BENAR";
             case 4:
-                return "WEAK / OPTIONAL";
+                return "JWB. LAIN";
             case 5:
-                return "RESULT";
+                return "HASIL";
             default:
                 return null;
         }
