@@ -3,6 +3,7 @@ package lcm;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /*
  * Netbeans 8.0 
@@ -31,12 +32,14 @@ public class BBS {
     private int[] listRandom;
     private BigInteger p;
     private BigInteger q;
+    private long timeDuration;
 
     public BBS() {
         this.listRandom = new int[38];
     }
 
     public void run() {
+        long long1 = System.nanoTime();
         boolean bool = true;
         BigInteger new_p = p;
         BigInteger new_q = q;
@@ -59,7 +62,9 @@ public class BBS {
             }
             new_p = new_p.add(BigInteger.ONE);
         }
-
+        long long2 = System.nanoTime();
+        timeDuration = TimeUnit.MILLISECONDS.convert(long2 - long1, TimeUnit.NANOSECONDS);
+        System.out.println("value : " + timeDuration);
     }
 
     private boolean sisip(int[] cek) {
@@ -97,10 +102,7 @@ public class BBS {
                 }
             }
         }
-        return cek(cek);
-    }
 
-    private boolean cek(int[] cek) {
         for (int i = 0; i < cek.length; i++) {
             for (int j = i + 1; j < cek.length; j++) {
                 if (cek[i] == cek[j]) {
@@ -238,6 +240,10 @@ public class BBS {
 
     public BigInteger getQ() {
         return q;
+    }
+
+    public long getTimeDuration() {
+        return timeDuration;
     }
 
 }

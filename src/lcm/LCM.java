@@ -5,6 +5,8 @@
  */
 package lcm;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  *
  * @author casper
@@ -19,29 +21,7 @@ public class LCM {
         main.setA(1);
         main.setC(7);
         main.setM(38);
-
-        int[] cek = new int[38];
-
-        for (int i = 0; i < 38; i++) {
-            cek[i] = -1;
-        }
-
-        int z = 21;
-        for (int i = 0; i < 38; i++) {
-            cek[i] = z;
-            z = main.getLinearCongruen(z);
-            System.out.println((i + 1) + ":" + z);
-        }
-
-        System.out.println("-----------------------------\n\n\n");
-        for (int i = 0; i < 38; i++) {
-            for (int j = i + 1; j < 38; j++) {
-                if (cek[i] == cek[j]) {
-                    System.out.println("salah : " + cek[i]);
-                }
-            }
-        }
-//        main.rule2();
+        main.run();
     }
 
     private int c;
@@ -49,17 +29,22 @@ public class LCM {
     private int a;
     private int z0;
     private final int[] listRandom;
+    private long timeDuration;
 
     public LCM() {
         this.listRandom = new int[38];
     }
 
     public void run() {
+        long long1 = System.nanoTime();
         int z = z0;
         for (int i = 0; i < 38; i++) {
             listRandom[i] = z;
             z = getLinearCongruen(z);
         }
+        long long2 = System.nanoTime();
+        timeDuration = TimeUnit.MILLISECONDS.convert(long2 - long1, TimeUnit.NANOSECONDS);
+        System.out.println("value : " + timeDuration);
     }
 
     public int getLinearCongruen(int z) {
@@ -84,6 +69,10 @@ public class LCM {
 
     public int[] getListRandom() {
         return listRandom;
+    }
+
+    public long getTimeDuration() {
+        return timeDuration;
     }
 
 }
